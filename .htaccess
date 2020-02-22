@@ -1,2 +1,9 @@
+#Options -Multiviews
 RewriteEngine on
-RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
+#RewriteBase /codephp
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
+#RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+RewriteRule ^ index.php [L]
